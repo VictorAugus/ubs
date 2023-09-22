@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Questionário</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Questionários</value>
+    </caseValues>
+    <fields>
+        <label><!-- Categoria --></label>
+        <name>Categoria__c</name>
+        <picklistValues>
+            <masterLabel>Ambiente</masterLabel>
+            <translation><!-- Ambiente --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edificação</masterLabel>
+            <translation><!-- Edificação --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Projeto</masterLabel>
+            <translation><!-- Projeto --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Item principal pai --></label>
+        <name>ItemPrincipalPai__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Principal --></label>
+        <name>ItemPrincipal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Observação --></label>
+        <name>Observacao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ordem --></label>
+        <name>Ordem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pergunta --></label>
+        <name>Pergunta__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indica que a pergunta tem resposta diferente do que está cadastrado na lista global. Resposta padrão: Péssimo, Ruim, Regular, Bom, Excelente / Não se aplica --></help>
+        <label><!-- Resposta diferente --></label>
+        <name>RespostaDiferente__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seção --></label>
+        <name>Secao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subcategoria --></label>
+        <name>Subcategoria__c</name>
+        <picklistValues>
+            <masterLabel>Acessibilidade</masterLabel>
+            <translation><!-- Acessibilidade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comunição e usuário</masterLabel>
+            <translation><!-- Comunição e usuário --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conforto acústico</masterLabel>
+            <translation><!-- Conforto acústico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conforto térmico</masterLabel>
+            <translation><!-- Conforto térmico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conforto visual</masterLabel>
+            <translation><!-- Conforto visual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custos</masterLabel>
+            <translation><!-- Custos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentação</masterLabel>
+            <translation><!-- Documentação --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Espaços</masterLabel>
+            <translation><!-- Espaços --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gestão e manutenção</masterLabel>
+            <translation><!-- Gestão e manutenção --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infraestrutura</masterLabel>
+            <translation><!-- Infraestrutura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local de uso e ocupação</masterLabel>
+            <translation><!-- Local de uso e ocupação --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Materiais e acabamentos</masterLabel>
+            <translation><!-- Materiais e acabamentos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobilidade</masterLabel>
+            <translation><!-- Mobilidade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promoção e saúde</masterLabel>
+            <translation><!-- Promoção e saúde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Segurança</masterLabel>
+            <translation><!-- Segurança --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sociais e culturais</masterLabel>
+            <translation><!-- Sociais e culturais --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustentabilidade</masterLabel>
+            <translation><!-- Sustentabilidade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Texto de ajuda --></label>
+        <name>TextoAjuda__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Layout de Pergunta</layout>
+        <sections>
+            <label><!-- Ajuda --></label>
+            <section>Ajuda</section>
+        </sections>
+        <sections>
+            <label><!-- Links personalizados --></label>
+            <section>Links personalizados</section>
+        </sections>
+        <sections>
+            <label><!-- Observações --></label>
+            <section>Observações</section>
+        </sections>
+        <sections>
+            <label><!-- Pergunta/Resposta --></label>
+            <section>Pergunta/Resposta</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

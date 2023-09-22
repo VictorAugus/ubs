@@ -1,0 +1,8 @@
+<template>
+    <!-- Exibe o input apenas se 'mostrarInputObservacao' for verdadeiro -->
+    <template if:true={mostrarInputObservacao}>
+        <div>
+            <textarea onblur={handleInputChange} value={valueInput}  type="text" placeholder="Você quer escrever algum comentário ou observação para este critério de avaliação?" ></textarea>
+        </div>
+    </template>
+</template>

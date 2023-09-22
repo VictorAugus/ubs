@@ -1,0 +1,4 @@
+<apex:page >
+    <h1>Cookie definido após autenticação</h1>
+    <p>Esta é a página que você será redirecionado após a autenticação.</p>
+</apex:page>

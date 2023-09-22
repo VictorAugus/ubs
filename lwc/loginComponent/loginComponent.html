@@ -1,0 +1,289 @@
+<template>
+    <form>
+       <div class="main-container slds-grid slds-grid_vertical">
+          <div if:false={islogged}>
+             <div class=slds-col>
+                <div class="img2  slds-align_absolute-center">
+                   <img style="max-width:50%;max-height:50%; height: 100px; width: 100px;" src={login_auth} align="middle" />
+                </div>
+                <!--<h1 class="text-align-center"><b class="main-heading">Bem vindo,</b></h1><h1 class="text-align-center"><b class="main-heading"> realize seu login!</b></h1><p class="slds-var-p-top_medium text-align-center"><span class="sub-heading"></span></p>!-->
+                <template if:true={errorCheck}>
+                   <div class="error slds-var-p-around_x-small slds-var-p-top_small" role="alert">
+                      <span>{errorMessage}</span>
+                   </div>
+                </template>
+             </div>
+             <div class="slds-col slds-var-p-top_small">
+                <div class="slds-form-element">
+                   <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <lightning-icon class="input-icon" icon-name="utility:user" alternative-text="username" size="xx-small"></lightning-icon>
+                      <input type="text" data-id="inputUsername" placeholder="Usuário/Email" class="slds-input input-element" onchange={handleUserNameChange} required />
+                   </div>
+                </div>
+             </div>
+             <div if:true={inputsCreated} class="slds-col slds-var-p-top_small">
+                <div class="slds-form-element">
+                   <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <lightning-icon class="input-icon" icon-name="utility:user" alternative-text="primeironome" size="xx-small"></lightning-icon>
+                      <input type="text" data-id="inputPrimeiroNome" placeholder="Primeiro Nome" class="slds-input input-element" onchange={handleFirstNameChange} required />
+                   </div>
+                </div>
+             </div>
+             <div if:true={inputsCreated} class="slds-col slds-var-p-top_small">
+                <div class="slds-form-element">
+                   <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <lightning-icon class="input-icon" icon-name="utility:user" alternative-text="ultimonome" size="xx-small"></lightning-icon>
+                      <input type="text" data-id="inputUltimoNome" placeholder="Último Nome" class="slds-input input-element" onchange={handleLastNameChange} required />
+                   </div>
+                </div>
+             </div>
+             <div class="slds-col slds-var-p-top_small">
+                <div class="slds-form-element">
+                   <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <lightning-icon class="input-icon" icon-name="utility:lock" alternative-text="username" size="xx-small"></lightning-icon>
+                      <input type="password" data-id="inputPassword" placeholder="Senha" class="slds-input input-element" onchange={handlePasswordChange} required />
+                   </div>
+                </div>
+             </div>
+             <div if:true={inputsCreated} class="slds-col slds-var-p-top_small">
+                <div class="slds-form-element">
+                   <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                      <lightning-combobox name="cargo" variant="label-hidden" value={value} placeholder="Selecione seu cargo" options={options} onchange={handleCargoChange}></lightning-combobox>
+                   </div>
+                </div>
+             </div>
+             <div if:false={inputsCreated} class="slds-col slds-var-p-top_small">
+                <button type="submit" class="login-button slds-button" onclick={handleLogin}>Acessar</button>
+             </div>
+             <div class="slds-col slds-var-p-top_small">
+                <a onclick={forgot}  class="forgot-password-text">Esqueci a senha?</a>
+                <lightning-helptext content="O sistema tem limite diario de disparo de email, então poderá aguardar até receber o email com sua chave"></lightning-helptext>
+                <a onclick={createView} if:false={inputsCreated} class="register-text">Registrar</a>
+                <a class="register-text" if:true={inputsCreated} onclick={create}>
+                   <lightning-icon icon-name="action:approval" alternative-text="Approved" title="Confirmar cadastro" size="xx-small"></lightning-icon>
+                </a>
+                <a class="register-text" if:true={inputsCreated} onclick={notcreate}>
+                   <lightning-icon icon-name="action:remove" alternative-text="Remove" title="Não cadastrar" size="xx-small"></lightning-icon>
+                </a>
+             </div>
+          </div>
+          <div if:true={islogged}>
+             <lightning-tabset variant="scoped">
+                <lightning-tab label="GERENCIAR UNIDADES" icon-name={iconName}>
+                   <lightning-button-icon icon-name="utility:new" size="x-small" onclick={handleAccountCreated} alternative-text="Adicionar Unidade" class="slds-m-left_xx-small" title="Adicionar unidade"></lightning-button-icon> Adicionar unidade <lightning-button-icon icon-name="utility:zoomin" size="x-small" onclick={handleAccountSearch} alternative-text="Pesquisar Unidade para vinculo" class="slds-m-left_xx-small" title="Pesquisar unidade para vinculo"></lightning-button-icon> Pesquisar unidade para vínculo <template if:true={isCreateUnidade}>
+                      <div class="slds-var-p-around_x-small">
+                         <lightning-input value={recAccount.Name} label="Nome Unidade básica de saúde" onchange={handelNamechange}></lightning-input>
+                         <lightning-input value={recAccount.Phone} label="Telefone" onchange={handelPhonechange}></lightning-input>
+                         <lightning-input value={recAccount.billingStreet} label="Rua" onchange={handelbillingStreetchange}></lightning-input>
+                         <lightning-input value={recAccount.Numero__c} label="Número" onchange={handeNumero__cchange}></lightning-input>
+                         <lightning-input value={recAccount.BillingState} label="Estado" onchange={handebillingStatechange}></lightning-input>
+                         <lightning-input value={recAccount.billingCity} label="Cidade" onchange={handebillingCitychange}></lightning-input>
+                         <br />
+                         <button class="slds-button slds-button_neutral" onclick={createAccRec}>Criar uma Unidade</button>
+                         <button class="slds-button slds-button_destructive" onclick={createCancelAccRec}>Cancelar</button>
+                      </div>
+                   </template>
+                   <template if:true={isSearchUnidade}>
+                      <c-custom-lookup obj-name="Account" search-placeholder="Enconte a unidade pelo nome" icon-name="standard:account" onlookupselected={handleAccountSelection}></c-custom-lookup>
+                   </template>
+                   <div class="tabContent">
+                      <div class="postImage">
+                         <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                            <thead>
+                               <tr class="slds-line-height_reset">
+                                  <th class="" scope="col">
+                                     <div class="slds-truncate" title="Subject">Unidade vinculada</div>
+                                  </th>
+                                  <th colspan="2" class="" scope="col">
+                                     <div class="slds-truncate" title="Priority">Telefone</div>
+                                  </th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                               <template for:each={unidades} for:item="unidade">
+                                  <tr key={unidade.Id} class="slds-hint-parent">
+                                     <td>{unidade.Account.Name}</td>
+                                     <td>{unidade.Account.Phone}</td>
+                                     <td>
+                                        <lightning-icon data-id={unidade.Id} icon-name="action:delete" size="xx-small" onclick={handleClickDelete}></lightning-icon>
+                                     </td>
+                                  </tr>
+                               </template>
+                            </tbody>
+                         </table>
+                      </div>
+                   </div>
+                </lightning-tab>
+                <lightning-tab label="CADASTRAR OS AMBIENTES" icon-name={iconAmbienteName}>
+                   <div class="tabContent">
+                      <div class="postImage">
+                         <lightning-card>
+                            <lightning-accordion active-section-name="X">
+                               <lightning-accordion-section for:each={grupoAmbientes} for:item="grupo" name={grupo.Name} label={grupo.Name} key={grupo.Id}>
+                                  <lightning-button-icon icon-name="utility:new" size="x-small" onclick={handleAmbienteCreated} alternative-text="Adicionar ambiente" class="slds-m-left_xx-small" title="Adicionar ambiente"></lightning-button-icon> Adicionar ambiente 
+                                  <template if:true={isCreateAmbiente}>
+                                     <lightning-card>
+                                        <div class="slds-var-p-around_x-small">
+                                           <lightning-input value={recAmbiente.Name} label="Nome " onchange={handelNamechangeAmbiente}></lightning-input>
+                                           <lightning-combobox name="Tipo" label="Tipo" value={valueTipoAmbiente} placeholder="-Selecione o tipo" options={tipoAmbienteList} onchange={handelTipochangeAmbiente}></lightning-combobox>
+                                           <lightning-combobox name="Cobertura" label="Cobertura" value={valueCoberturaAmbiente} placeholder="-Selecione a cobertura" options={coberturaAmbienteList} onchange={handelCoberturaChangeAmbiente}></lightning-combobox>
+                                           <!--<lightning-input value={recAmbiente.Grupo__c} label="Grupo " onchange={handelGrupochangeAmbiente}></lightning-input>
+                                           <lightning-input value={recAmbiente.Unidade__c} label="Unidade " onchange={handelUnidadechangeAmbiente}></lightning-input>
+                                           <lightning-input step="0.01" type="number" value={recAmbiente.AreaAmbiente__c} label="Área ambiente " onchange={handelAreaAmbientechangeAmbiente}></lightning-input>
+                                           <lightning-input step="0.01" type="number" value={recAmbiente.AreaEsquadrias__c} label="Área esquadrias " onchange={handelAreaEsqAmbientechangeAmbiente}></lightning-input>!-->
+                                           <div class="slds-section slds-is-open">
+                                              <h3 class="slds-section__title slds-theme_shade">
+                                                 <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Dimensões</span>
+                                              </h3>
+                                           </div>
+                                           <lightning-input step="0.01" type="number" value={recAmbiente.LarguraDimensao__c} label="Largura " onchange={handelLarAmbientechangeAmbiente}></lightning-input>
+                                           <lightning-input step="0.01" type="number" value={recAmbiente.Comprimento__c} label="Comprimento " onchange={handelAreaComAmbientechangeAmbiente}></lightning-input>
+                                           <lightning-input step="0.01" type="number" value={recAmbiente.PeDireito__c} label="Pé direito " onchange={handelAreaPeAmbientechangeAmbiente}></lightning-input>
+                                           <br />
+                                           <button data-id={grupo.Id} class="slds-button slds-button_neutral" onclick={createAmbienteRec}>Criar ambiente</button>
+                                           <button class="slds-button slds-button_destructive" onclick={createCancelAmbienteRec}>Cancelar</button>
+                                        </div>
+                                     </lightning-card>
+                                  </template>
+                                  <lightning-accordion allow-multiple-sections-open="true">
+                                     <template for:each={grupo._children} for:item="ambiente">
+                                        <lightning-accordion-section name={ambiente.Name} label={ambiente.Name} key={ambiente.Id}>
+                                           <lightning-card title={ambiente.Name}>
+                                              <lightning-button-group slot="actions">
+                                                <!--<lightning-button-icon 
+                                                  icon-name="utility:matrix"
+                                                  alternative-text="Adicionar esquadria"
+                                                  title="Adicionar esquadria"
+                                                  tooltip="Adicionar esquadria"
+                                                  value={ambiente.Id}
+                                                  data-env={ambiente.Id}
+                                                  onclick={handleClickAddMiter}
+                                                  disabled={selectedEnvId}
+                                                ></lightning-button-icon>!-->
+                                                <lightning-button-icon 
+                                                    icon-name="utility:delete" 
+                                                    data-id={ambiente.Id} 
+                                                    onclick={handleExcludeAmbiente} 
+                                                    alternative-text="Excluir" 
+                                                    class="slds-m-right_xx-small" 
+                                                    title="Excluir"
+                                                ></lightning-button-icon>
+                                                <!-- Cobertura {ambiente.Cobertura__c} -->
+                                            </lightning-button-group> 
+                                            <lightning-spinner if:true={loading} alternative-text="Carregando..."></lightning-spinner>
+                                            <lightning-record-form
+                                                if:true={selectedEnvId}
+                                                object-api-name="Esquadrias__c"
+                                                fields={miterFields}
+                                                onsubmit={handleMiterSubmit}
+                                            ></lightning-record-form>
+                                            <!-- <div slot="title"> -->
+                                              <p class="slds-p-horizontal_small">Tipo {ambiente.Tipo__c}</p>
+                                              
+                                              <div slot="footer"></div>
+                                           </lightning-card>
+                                        </lightning-accordion-section>
+                                     </template>
+                                  </lightning-accordion>
+                               </lightning-accordion-section>
+                            </lightning-accordion>
+                         </lightning-card>
+                      </div>
+                   </div>
+                </lightning-tab>
+                <lightning-tab onactive={handleActivePerguntas} label="INICIAR A AVALIAÇÃO" icon-name={iconQuestionsName}>
+                   <div class="tabContent">
+                      <div class="postImage">
+                         <lightning-card>
+                            <lightning-accordion onsectiontoggle={handleSectionToggle} active-section-name={activeSections}>
+                               <lightning-accordion-section for:each={grupoAmbientes} for:item="grupo" name={grupo.Name} label={grupo.Name} key={grupo.Id}>
+                                  <lightning-button-icon data-id={grupo.Id} icon-name="utility:edit" size="x-small" onclick={getQuestionByUnidade} alternative-text="Abra o questionario" class="slds-m-left_xx-small" title="Abra o questionario"></lightning-button-icon> Abra o questionario <lightning-button-icon data-id={grupo.Id} icon-name="utility:close" size="x-small" onclick={closeQuestionUnidade} alternative-text="Feche o questionario" class="slds-m-left_xx-small" title="Feche o questionario"></lightning-button-icon> Feche o questionario <template if:true={isOpenQuestionUnidade}>
+                                    <lightning-spinner if:true={loading} alternative-text="Carregando..."></lightning-spinner>
+                                    <lightning-card>
+                                       <lightning-accordion allow-multiple-sections-open="true" active-section-name={accordianOpenSection} >
+                                          <lightning-accordion-section class="slds-is-closed" open="true" for:each={perguntasAmbientesGroupUnidade} data-parent={uniqueSectionId} for:item="categoria" name={categoria.nome} label={categoria.nome} key={categoria.Id}>
+                                             
+                                             <template if:true={categoria.ambientes.length}>
+                                               <!-- <lightning-accordion-section name={categoria.nome} label={categoria.nome} key={categoria.nome} open>-->
+                                                    <template for:each={categoria.ambientes}  for:item="ambiente">
+                                                        <lightning-accordion-section open="true" data-nome={ambiente.nome} name={ambiente.nome}  class="slds-is-closed"  label={ambiente.nome} key={ambiente.nome}     >
+                                                         <template for:each={ambiente.subcategorias} for:item="subcategoria">
+                                                            <lightning-accordion-section name={subcategoria.nome} label={subcategoria.nome} open={secaoAbertaPorPadrao} class="slds-is-closed" data-nome={ambiente.nome}  key={subcategoria.Id}>
+                                                               <template for:each={subcategoria.secoes} for:item="secao">
+                                                                  <lightning-accordion-section name={secao.nome} label={secao.nome} key={secao.Id} class="slds-is-open" data-nome={ambiente.nome} >
+                                                                     <template for:each={secao.perguntas} for:item="pergunta" >
+                                                                        <div key={pergunta.Id}>
+                                                                           <ul style="list-style-type: none;"> <!-- Remova as balas das listas -->
+                                                                              <b>{pergunta.nome}</b>
+                                                                               <template for:each={pergunta.itens} for:item="item" >
+                                                                                 <li key={item.Id} style="display: block; margin-bottom: 10px;">
+                                                                                    <div>
+                                                                                           
+                                                                                          
+                                                                                          <lightning-helptext icon-name="utility:macros" size="x-small"  class="slds-m-left_xx-small" content={item.Pergunta__r.TextoAjuda__c}></lightning-helptext><b>{item.Pergunta__r.ItemPrincipal__c}</b> {item.RespostaRealizada__c}
+                                                                                         
+                                                                                          <c-input-conditional data-id={item.Id} resposta-observacao={item.Observacao__c} onblur={handleInputChangeInParent} resposta-id={item.Id}  resposta-item={pergunta.nome}></c-input-conditional>
+                                                                                          
+
+
+                                                                                           <p>Sua escolha foi: <b>{item.Resposta__c}</b></p> 
+                                                                                           <br />
+                                                                                           <lightning-button-icon data-id={item.Id} icon-name="utility:dislike" size="x-small" onclick={handlePessimoRespostaUnidade} alternative-text="Péssimo" class="slds-m-left_xx-small " title="Péssimo"></lightning-button-icon>
+                                                                                           Péssimo
+                                                                                           <lightning-button-icon data-id={item.Id} icon-name="utility:sentiment_negative" size="x-small" onclick={handleRuimRespostaUnidade} alternative-text="Ruim" class="slds-m-left_xx-small" title="Ruim"></lightning-button-icon>
+                                                                                           Ruim
+                                                                                           <lightning-button-icon data-id={item.Id} icon-name="utility:sentiment_neutral" size="x-small" onclick={handleRegularRespostaUnidade} alternative-text="Regular" class="slds-m-left_xx-small" title="Regular"></lightning-button-icon>
+                                                                                           Regular
+                                                                                           <lightning-button-icon data-id={item.Id} icon-name="utility:emoji" size="x-small" onclick={handleBomRespostaUnidade} alternative-text="Bom" class="slds-m-left_xx-small" title="Bom"></lightning-button-icon>
+                                                                                           Bom
+                                                                                           <lightning-button-icon data-id={item.Id} icon-name="utility:smiley_and_people" size="x-small" onclick={handleExcelenteRespostaUnidade} alternative-text="Excelente" class="slds-m-left_xx-small" title="Excelente"></lightning-button-icon>
+                                                                                           Excelente
+                                                                                           <lightning-button-icon data-id={item.Id} icon-name="utility:resource_absence" size="x-small" onclick={handleNSAplicaRespostaUnidade} alternative-text="Não se aplica" class="slds-m-left_xx-small" title="Não se aplica"></lightning-button-icon>
+                                                                                           Não se aplica
+                                                                                           <br />
+
+
+                                                                                       </div>
+                                                                                    </li>
+                                                                               </template>
+                                                                           </ul>
+                                                                           <br/>
+                                                                       </div>
+                                                                       
+                                                                     </template>
+                                                                  </lightning-accordion-section>
+                                                               </template>
+                                                            </lightning-accordion-section>
+                                                         </template>
+                                                        </lightning-accordion-section>
+                                                    </template>
+                                                <!--</lightning-accordion-section>!-->
+                                            </template>
+                                          </lightning-accordion-section>
+                                       </lightning-accordion>
+                                       
+                                    </lightning-card>
+                                    
+                                    
+                                   
+                                  </template>
+                                 
+                               </lightning-accordion-section>
+                            </lightning-accordion>
+                         </lightning-card>
+                      </div>
+                   </div>
+                </lightning-tab>
+                <lightning-tab label="Ver Painel" icon-name={iconDashboardName}>
+                  
+                        
+                                  <iframe  width=100% height=800px scrolling="false"  src={fullUrl}></iframe>
+                        
+                     
+                  
+               </lightning-tab>
+             </lightning-tabset>
+          </div>
+       </div>
+    </form>
+</template>

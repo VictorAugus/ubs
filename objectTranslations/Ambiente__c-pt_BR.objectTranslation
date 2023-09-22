@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ambiente</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ambientes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Área do ambiente --></label>
+        <name>AreaAmbiente__c</name>
+    </fields>
+    <fields>
+        <label><!-- Área de esquadrias --></label>
+        <name>AreaEsquadrias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cobertura --></label>
+        <name>Cobertura__c</name>
+        <picklistValues>
+            <masterLabel>Coberto</masterLabel>
+            <translation><!-- Coberto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Descoberto</masterLabel>
+            <translation><!-- Descoberto --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comprimento --></label>
+        <name>Comprimento__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contato --></label>
+        <name>Contato__c</name>
+        <relationshipLabel><!-- Ambientes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Exclusivo --></label>
+        <name>Exclusivo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grupo --></label>
+        <name>Grupo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Largura --></label>
+        <name>LarguraDimensao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pé direito --></label>
+        <name>PeDireito__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantidade de Resposta --></label>
+        <name>QuantidadeResposta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantidade de Respostas finalizadas --></label>
+        <name>QuantidadeRespostasFinalizadas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantidade Respostas não finalizadas --></label>
+        <name>QuantidadeRespostasNaofinalizadas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tipo --></label>
+        <name>Tipo__c</name>
+        <picklistValues>
+            <masterLabel>Almoxarifado</masterLabel>
+            <translation><!-- Almoxarifado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BWC</masterLabel>
+            <translation><!-- BWC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Circulação</masterLabel>
+            <translation><!-- Circulação --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cisterna</masterLabel>
+            <translation><!-- Cisterna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultório</masterLabel>
+            <translation><!-- Consultório --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultório Odontológico</masterLabel>
+            <translation><!-- Consultório Odontológico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copa</masterLabel>
+            <translation><!-- Copa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Depósito de Materiais de Limpeza</masterLabel>
+            <translation><!-- Depósito de Materiais de Limpeza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Depósito de Resíduos</masterLabel>
+            <translation><!-- Depósito de Resíduos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Embarque e Desembarque de Ambulância</masterLabel>
+            <translation><!-- Embarque e Desembarque de Ambulância --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estacionamento</masterLabel>
+            <translation><!-- Estacionamento --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estocagem/Dipensação de Medicamentos</masterLabel>
+            <translation><!-- Estocagem/Dipensação de Medicamentos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expurgo</masterLabel>
+            <translation><!-- Expurgo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jardim</masterLabel>
+            <translation><!-- Jardim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outros (descrever)</masterLabel>
+            <translation><!-- Outros (descrever) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Administração&quot;,</masterLabel>
+            <translation><!-- Sala de Administração&quot;, --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Atividades Coletivas</masterLabel>
+            <translation><!-- Sala de Atividades Coletivas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Coleta</masterLabel>
+            <translation><!-- Sala de Coleta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Curativos</masterLabel>
+            <translation><!-- Sala de Curativos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Esterelização</masterLabel>
+            <translation><!-- Sala de Esterelização --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Inalação</masterLabel>
+            <translation><!-- Sala de Inalação --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Observação / Procedimentos</masterLabel>
+            <translation><!-- Sala de Observação / Procedimentos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Recepção/Espera</masterLabel>
+            <translation><!-- Sala de Recepção/Espera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sala de Vacinas</masterLabel>
+            <translation><!-- Sala de Vacinas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Área Descoberta / Playground</masterLabel>
+            <translation><!-- Área Descoberta / Playground --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UBS --></label>
+        <name>UBS__c</name>
+        <relationshipLabel><!-- Ambientes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unidade --></label>
+        <name>Unidade__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Layout de Ambiente</layout>
+        <sections>
+            <label><!-- Dimensões --></label>
+            <section>Dimensões</section>
+        </sections>
+        <sections>
+            <label><!-- Gerenciar respostas --></label>
+            <section>Gerenciar respostas</section>
+        </sections>
+        <sections>
+            <label><!-- Links personalizados --></label>
+            <section>Links personalizados</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

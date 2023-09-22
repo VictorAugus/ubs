@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Integrado com erro</fullName>
+        <default>true</default>
+        <label>Integrado com erro</label>
+    </customValue>
+    <customValue>
+        <fullName>Integrado com sucesso</fullName>
+        <default>false</default>
+        <label>Integrado com sucesso</label>
+    </customValue>
+    <customValue>
+        <fullName>Não necessario</fullName>
+        <default>false</default>
+        <label>Não necessario</label>
+    </customValue>
+    <customValue>
+        <fullName>Pendente</fullName>
+        <default>false</default>
+        <label>Pendente</label>
+    </customValue>
+    <customValue>
+        <fullName>Cancelado com sucesso</fullName>
+        <default>false</default>
+        <label>Cancelado com sucesso</label>
+    </customValue>
+    <masterLabel>StatusIntegracao</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

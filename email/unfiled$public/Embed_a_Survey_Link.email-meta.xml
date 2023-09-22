@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Conteúdo de modelo para quando você incorporar um link a uma pesquisa em um email. Não é possível incorporar um link de pesquisa se você editar os campos de mesclagem ou excluir esse modelo.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Embed_a_Survey_Link</name>
+    <relatedEntityType>SurveyQuestion</relatedEntityType>
+    <style>none</style>
+    <subject>Seu feedback é importante. Ajude-nos a melhorar respondendo essa pesquisa.</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

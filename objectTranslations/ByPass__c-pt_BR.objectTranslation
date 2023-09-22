@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ByPass</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ByPass</value>
+    </caseValues>
+    <fields>
+        <label><!-- Desativar regras de validação --></label>
+        <name>DesativarRegrasValidacao__c</name>
+    </fields>
+    <gender>Neuter</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Resposta</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Respostas</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ambiente --></label>
+        <name>Ambiente__c</name>
+        <relationshipLabel><!-- Respostas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Categoria --></label>
+        <name>Categoria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pergunta --></label>
+        <name>FormulaPergunta__c</name>
+    </fields>
+    <fields>
+        <label><!-- FormulaUnidade --></label>
+        <name>FormulaUnidade__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom_Formula_Unidade --></label>
+        <name>FormulaUnidade_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item principal --></label>
+        <name>ItemPrincipal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Observação --></label>
+        <name>Observacao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pergunta --></label>
+        <name>Pergunta__c</name>
+        <relationshipLabel><!-- Respostas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Resposta realizada --></label>
+        <name>RespostaRealizada__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resposta --></label>
+        <name>Resposta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seção --></label>
+        <name>Secao__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubCategoria --></label>
+        <name>SubCategoria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unidade --></label>
+        <name>Unidade__c</name>
+        <relationshipLabel><!-- Respostas --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Layout de Resposta</layout>
+        <sections>
+            <label><!-- Links personalizados --></label>
+            <section>Links personalizados</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

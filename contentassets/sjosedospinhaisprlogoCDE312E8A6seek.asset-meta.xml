@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
+    <language>pt_BR</language>
+    <masterLabel>sjosedospinhaisprlogoCDE312E8A6seek</masterLabel>
+    <originNetwork>ubs</originNetwork>
+    <relationships>
+        <network>
+            <access>VIEWER</access>
+            <name>ubs</name>
+        </network>
+        <workspace>
+            <access>INFERRED</access>
+            <isManagingWorkspace>true</isManagingWorkspace>
+            <name>sfdc_asset_company_assets</name>
+        </workspace>
+    </relationships>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>s-jose-dos-pinhais-pr-logo-CDE312E8A6-seeklogo.com.png</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>
