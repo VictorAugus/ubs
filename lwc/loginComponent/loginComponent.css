@@ -1,0 +1,223 @@
+body {
+    background-size: cover;    
+    background-image: url("/resource/loginBackground"); /*choose image from static resource*/
+}
+
+.center {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    
+    background-color: #6DE0F6;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.main-heading {
+
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.sub-heading {
+
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+.input-icon {
+
+    position: absolute;
+    margin: 0.9rem 0.7rem;
+}
+
+.input-element {
+
+    padding: 0.5rem 0rem 0.5rem 2rem;
+    font-size: 16px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.forgot-password-text {
+
+    color: #CCBFBF;
+    font-size: 14px;
+    text-align: left;
+}
+
+.register-text {
+
+    color: #CCBFBF;
+    font-size: 14px;
+    float: right;
+}
+
+.error {
+
+    text-align: center;
+    word-break: break-word;
+    max-width: 20rem;
+    color: #ff9e9e;
+}
+
+.register-heading {
+
+    max-width: 25rem;
+    font-weight: 700;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.slds-grid_vertical .slds-col {
+
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.terms-and-conditions-close {
+
+    float: right;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.terms-and-conditions-header, .terms-and-conditions-body {
+   
+    background-color: #170B45;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.terms-and-conditions-header {
+
+    border-bottom: none;
+}
+
+.terms-and-conditions-body {
+
+    border-top: none;
+}
+
+.terms-and-conditions-heading {
+
+    color: white;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.terms-and-conditions-button:hover, .terms-and-conditions-button:focus {
+
+    background-color: white;
+}
+
+.tooltip {
+    position: relative;   
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    max-width: 250px;
+    width: max-content;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 3px;
+    position: absolute;
+    z-index: 1;    
+    margin-left: 0.5rem;
+    bottom: 0;
+    left: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    margin-left: -6px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    transform: rotate(90deg);
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  .tooltipEmail:hover ~ .usernameColumn .tooltip .tooltiptext {
+
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltipError {
+
+    background-color: red !important;
+    border: 1px solid white;
+  }
+
+  .tooltip .tooltipError::after {
+
+    border-color: white transparent transparent transparent !important;
+  }
+
+  .tooltipShow {
+
+    display: block;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .tooltipHide {
+
+    display: none;
+  }
+
+
+.terms-and-conditions-link {
+
+    color: white;
+    text-decoration: underline;
+}
+.slds-vertical-tabs__nav .slds-vertical-tabs__nav-item.slds-is-active, .THIS .slds-vertical-tabs__nav .slds-vertical-tabs__nav-item a:focus{color:rgb(194, 57, 52); font-weight:bold; text-decoration:none;}
+h3.slds-text-heading_medium{padding:5px 0 5px 10px; background:#eee; margin-bottom:10px; display:block;}
+.slds-tabs_scoped__item.slds-is-active .slds-tabs_scoped__link{color:#b70e01; text-decoration:none;}
+.tabContent{display:block; padding:15px 0 5px 0px; font-size:14px; overflow: hidden;}
+.tabContent .postImage{display: inline-block; float: left; margin-right: 20px;}
+.readMore{font-size:14px; font-weight:bold; display:inline-block; padding:0 0 0 10px;}
+.readMore a{color:#ff0000; text-decoration:none;}
+.readMore a:hover{color:#04a5ca; text-decoration:underline;}
+.titleTag{font-size:18px;}
+.imgRt{width:55%; float:left;}
+.redColor{
+    fill : #FF0000;
+}
+.open {
+    display: block; /* ou qualquer estilo que você queira para a seção aberta */
+}
+
+.closed {
+    display: none; /* ou qualquer estilo que você queira para a seção fechada */
+}
+.lista-item {
+    display: block; /* Faz com que cada item seja exibido em uma nova linha */
+    margin-bottom: 10px; /* Adiciona um espaçamento inferior entre os itens */
+}

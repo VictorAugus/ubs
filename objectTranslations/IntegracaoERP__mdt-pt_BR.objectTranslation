@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Integração ERP</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Integrações ERP</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ativo --></label>
+        <name>Ativo__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Point Cancelamento Pedido --></label>
+        <name>EndPointCancelamentoPedido__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Point Criação Pedido --></label>
+        <name>EndPointCriacaoPedido__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Point Criação Produto Conta --></label>
+        <name>EndPointCriacaoProdutoConta__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint de Busca de contas --></label>
+        <name>EndpointBuscaContas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint Consulta DANFE --></label>
+        <name>EndpointConsultaDANFE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint Insert Cotação --></label>
+        <name>EndpointInsertCotacao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint Insert Parceiro --></label>
+        <name>EndpointInsertParceiro__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint Obter Token --></label>
+        <name>EndpointObterToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint Update Parceiro --></label>
+        <name>EndpointUpdateParceiro__c</name>
+    </fields>
+    <fields>
+        <label><!-- Senha --></label>
+        <name>Senha__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailAddress ( usuario ) --></label>
+        <name>Usuario__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Layout de Integração ERP</layout>
+        <sections>
+            <label><!-- Links personalizados --></label>
+            <section>Links personalizados</section>
+        </sections>
+        <sections>
+            <label><!-- Url&apos;s Busca --></label>
+            <section>Url&apos;s Busca</section>
+        </sections>
+        <sections>
+            <label><!-- Urls --></label>
+            <section>Urls</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

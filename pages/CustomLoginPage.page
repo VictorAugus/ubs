@@ -1,0 +1,22 @@
+<apex:page showHeader="false" sidebar="false" controller="CustomLoginController">
+    <html>
+    <head>
+        <title>teste Login</title>
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>Clique para carregar o painel</h2>
+            <apex:form >
+                <!--<apex:pageMessages />
+                <label for="username">Username:</label>
+                <apex:inputText id="username" value="{!username}" required="true"/>
+                
+                <label for="password">Password:</label>
+                <apex:inputSecret id="password" value="{!password}" required="true"/>!-->
+                
+                <apex:commandButton value="carregar" action="{!doLogin}" />
+            </apex:form>
+        </div>
+    </body>
+    </html>
+</apex:page>

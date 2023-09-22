@@ -1,0 +1,249 @@
+<apex:page showHeader="false"  sidebar="false" docType="html-5.0" controller="ControllerPDF" cache="false" lightningStylesheets="true">
+    <html>
+        <head>
+            <style>
+                @page{
+                size: 29.5cm 21.0cm;
+                margin-top: 0px !important;
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+                margin-bottom: -8px !important;
+                padding: 1cm !important;
+                }
+                
+                .pagenumber:before {
+                content: counter(page);
+                color: #660000;
+                font-size: 13px;
+                margin-right: 10px;
+                }
+                
+                .pagecount:before {
+                content: counter(pages);
+                }
+                
+                html, body {
+                width: 100% !important;
+                height: 21.0cm !important;
+                margin: 0px !important;
+                font-family: sans-serif !important;
+                color: #1c1c1c;
+                }
+                
+                img {
+                max-width: 100%;
+                }
+                
+                a {
+                color: #1c1c1c;
+                }
+                
+                .medium {
+                font-weight: 500;
+                }
+                
+                .bold {
+                font-weight: 600;
+                }
+                
+                .bolder {
+                font-weight: 800;
+                }
+                
+                .black {
+                font-weight: 900;
+                }
+                
+                .text-left {
+                text-align: left;
+                }
+                
+                .text-center {
+                text-align: center;
+                }
+                
+                .text-right {
+                text-align: right;
+                }
+                
+                .uppercase {
+                text-transform: uppercase;
+                }
+                
+                table {
+                border-collapse: collapse;
+                width: 100%;
+                padding: 0;
+                }
+                
+                table tr.header > td {
+                height: 0cm;
+                }
+                
+                table tr.footer > td {
+                height: 0cm;
+                }
+                
+                table tr.content > td {
+                height: 19.0cm;
+                padding: 0cm;
+                }
+                
+                body > table td {
+                vertical-align: top;
+                }
+                
+                table.opportunity-table .fornecedores img {
+                position: absolute;
+                top: 0;
+                right: 15px;
+                margin-top: -30px;
+                }
+                
+                table.requisitante tr:nth-child(even) {
+                color: red;
+                }
+                
+                table tr.content th {
+                color: #fff;
+                }
+                
+                table.products-table th, table.products-table td {
+                vertical-align: middle;
+                }
+                
+                table.products-table tr.red th {
+                padding: 10px;
+                }
+                
+                table.products-table tr.gray th {
+                padding: 5px 10px;
+                font-size: 12px;
+                }
+                
+                table.products-table tr.repeater td {
+                padding: 5px 10px;
+                font-size: 12px;
+                border-bottom: 1px solid #c1c1c1;
+                }
+                
+                table.condicoes > tr > th, table.condicoes > tr > td {
+                padding: 8px;
+                font-size: 14px;
+                }
+                
+                table.condicoes > tr > td {
+                border-bottom: 1px solid #cdcdcd;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>
+                RESUMO UBS's
+            </h1>
+            <table  id="tableProducts" class="products-table"> 
+                <thead>
+                    <tr class="gray">
+                        <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">UBS</th>
+                        <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Telefone</th>
+                        <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Endereço</th>     
+                        <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Qtds Respostas concluidas</th>
+                    </tr>        
+                </thead> 
+                <tbody>
+                    <apex:repeat value="{!accounts}" var="ac">
+                        <tr> 
+                            <td >{!ac.Name}
+                            </td> 
+                            <td >{!ac.Phone}</td> 
+                            <td >{!ac.BillingStreet} - {!ac.Numero__c} -  {!ac.BillingState}</td> 
+                            <td >{!ac.QuantidadeResposta__c} / {!ac.QuantidadeRespostasFinalizadas__c}</td> 
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+            <h1>
+                UBS's por usuário
+            </h1>           
+            <table  id="tableProducts" class="products-table"> 
+            <thead>
+                <tr class="gray">
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">UBS</th>
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Email</th>
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Cargo</th>     
+                </tr>        
+            </thead> 
+            <tbody>
+                <apex:repeat value="{!accounts}" var="ac">
+                    <tr> 
+                        <td colspan="4" >{!ac.Name}
+                            <tbody>
+                                <apex:repeat value="{!ac.AccountContactRelations}" var="ct">
+                                    <tr>
+                                        <td ></td>
+                                        <td >{!ct.Contact.Name} - {!ct.Contact.Email}</td>
+                                        <td >{!ct.Contact.title}</td>
+                                        
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </td> 
+                        
+                    </tr>
+                </apex:repeat>
+            </tbody>
+            </table>
+            
+             <h1>
+                UBS's por ambiente
+            </h1>  
+            <table  id="tableProducts" class="products-table"> 
+            <thead>
+                <tr class="gray">
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">UBS</th>
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Ambiente</th>
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Cobertura</th>     
+                    <th bgcolor="#2FA2C6" style="border-bottom: 1px solid #fff; border-right: 1px solid #fff">Qtds Respostas concluidas</th>     
+                </tr>        
+            </thead> 
+            <tbody>
+                <apex:repeat value="{!accounts}" var="ac">
+                    <tr> 
+                        <td colspan="4" >{!ac.Name}
+                            <tbody>
+                                <apex:repeat value="{!ac.Ambientes__r}" var="ct">
+                                    <tr>
+                                        <td ></td>
+                                        <td >{!ct.Name} - {!ct.Cobertura__c} </td>
+                                        <td >{!ct.Grupo__c}</td>
+                                        <td >{!ct.QuantidadeResposta__c} / {!ct.QuantidadeRespostasFinalizadas__c}</td> 
+                                        
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </td> 
+                        
+                    </tr>
+                </apex:repeat>
+            </tbody>
+            </table>
+            
+            <apex:chart height="400" width="800" data="{!accountsByAmbiente}">
+                <apex:axis type="Category" position="bottom" fields="Name" title="Unidade"/>
+                <apex:axis type="Numeric" position="left" fields="QuantidadeRespostasFinalizadas__c" title="Respostas Finalizadas"/>
+                <apex:barSeries title="Respostas Finalizadas por Unidade" orientation="vertical" axis="bottom" xField="Name" yField="QuantidadeRespostasFinalizadas__c"/>
+                <apex:legend position="right"/>
+            </apex:chart>
+          
+           	GRAFICOS
+            <h1>
+                Resumo das respostas
+            </h1>
+            <img src="https://daspeweb-e-dev-ed.develop.my.salesforce.com/servlet/servlet.ChartServer?rsid=0FL6e000002hAqf&ruid=0056e00000DZisj&did=01Z6e000000NPB0&s=7&fs=10&tfg=12&tfs=-16777216&explode=0&c=bar&cs=0&title=&eh=no&compo=yes&fg=-16777216&bg1=-1&bg2=-1&bgdir=2&dl1=Nome+da+conta&dl2=&l=1&sax=yes&Yman=no&nc=0&actUrl=%2F00O6e000009803U&sd=1&scv=yes&sct=no&spt=no&bd=yes&cu=BRL&ab=X&u=0&vt=0&ab2=Y&u2=0&vt2=0&vl0=Soma+de+Quantidade+de+Resposta&vl1=Soma+de+Quantidade+de+Respostas+finalizadas&spoc=no&topn=no&gc0=-1&gc1=-1&gc2=-1&sona=0&rco=DASHBOARD_VIEW&rid=00O6e000009803U&refreshts=1693178840000"/>
+            <h1>
+                Resumo das respostas por Unidade
+            </h1>
+            <img src="https://daspeweb-e-dev-ed.develop.my.salesforce.com/servlet/servlet.ChartServer?rsid=0FL6e000002hBKL&ruid=0056e00000DZisj&did=01Z6e000000NPB0&s=7&fs=10&tfg=12&tfs=-16777216&explode=0&c=bar&cs=1&title=&eh=no&compo=yes&fg=-16777216&bg1=-1&bg2=-1&bgdir=2&dl1=FormulaUnidade&dl2=respostas&l=1&sax=yes&Yman=no&nc=0&actUrl=%2F00O6e00000980Tm&sd=1&scv=yes&sct=no&spt=no&bd=yes&cu=BRL&ab=X&u=0&vt=0&ab2=Y&u2=0&vt2=0&vl0=N%C3%BAmero+de+registros&spoc=no&topn=no&gc0=-1&gc1=-1&gc2=-1&sona=0&rco=DASHBOARD_VIEW&rid=00O6e00000980Tm&refreshts=1693418308000"/>
+        </body>
+    </html>
+</apex:page>

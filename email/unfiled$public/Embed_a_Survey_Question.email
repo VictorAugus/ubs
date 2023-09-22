@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<div style="font-size: 0.875rem; font-family: 'Salesforce Sans',Arial,sans-serif;"><br />
+Olá, {{{Recipient.FirstName}}}...<br />
+Segue suas informações de autenticação:<br />
+<strong>Usuário</strong>:&nbsp;{{{Recipient.email}}}<br />
+<strong>Senha</strong>:&nbsp;{{{Recipient.Senha__c}}}<br />
+<br />
+<br />
+Link para acesso:<br />
+<a href="https://">https://daspeweb-e-dev-ed.develop.my.site.com/s/</a><br />
+<br />
+Obrigado,<br />
+UBS</div>
+</body>
+</html>

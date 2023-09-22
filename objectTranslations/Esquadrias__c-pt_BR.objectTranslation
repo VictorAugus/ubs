@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Esquadria</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Esquadrias</value>
+    </caseValues>
+    <fields>
+        <label><!-- Altura --></label>
+        <name>Altura__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ambiente --></label>
+        <name>Ambiente__c</name>
+        <relationshipLabel><!-- Esquadrias --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Área de iluminação --></label>
+        <name>AreaIluminacao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Área de ventilação --></label>
+        <name>AreaVentilacao__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instalada na fachada? --></label>
+        <name>InstaladaFachada__c</name>
+    </fields>
+    <fields>
+        <label><!-- Largura --></label>
+        <name>Largura__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tipo --></label>
+        <name>Tipo__c</name>
+        <picklistValues>
+            <masterLabel>Janela</masterLabel>
+            <translation><!-- Janela --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Porta</masterLabel>
+            <translation><!-- Porta --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

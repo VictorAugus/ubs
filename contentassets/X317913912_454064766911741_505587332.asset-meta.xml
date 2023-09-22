@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
+    <language>pt_BR</language>
+    <masterLabel>X317913912_454064766911741_505587332</masterLabel>
+    <originNetwork>ubs</originNetwork>
+    <relationships>
+        <network>
+            <access>VIEWER</access>
+            <name>ubs</name>
+        </network>
+        <workspace>
+            <access>INFERRED</access>
+            <isManagingWorkspace>true</isManagingWorkspace>
+            <name>sfdc_asset_company_assets</name>
+        </workspace>
+    </relationships>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>317913912_454064766911741_5055873324795332565_n.jpg</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

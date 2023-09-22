@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <iframe src="/lightning/r/Dashboard/01Z6e000000NPB0EAO/view?queryScope=userFolders"
+            width="100%" height="600px">
+    </iframe>
+</aura:component>
